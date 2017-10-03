@@ -1,0 +1,301 @@
+<div class="wrapper body-inverse"> <!-- wrapper -->
+<div class="container">
+
+
+    <div class="row">
+        <form name="frmResultado" method="post" id="frmResultado" action="" class="frmResultado custom">
+            <div class="row">
+                <div class="col-sm-3" style="margin-left: 3%">
+                    </div>
+                <div class="col-sm-5">
+
+                        <?php $flashMessenger = Zend_Controller_Action_HelperBroker::getStaticHelper('FlashMessenger'); ?>
+                        <?php if ($flashMessenger->setNamespace('error')->hasMessages()): ?>
+                          <div class="row">
+                                <div class="large-12 columns">
+                                    <div class="message error">
+                                        <?php foreach ($flashMessenger->getMessages() as $msg): ?>
+                                            <?php echo $msg ?>
+                                        <?php endforeach; ?>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endif; ?>
+
+                        <?php if (is_array($this->candidato)): ?>
+
+                                <center><b><?php echo $this->candidato['nomeprocessoseletivo']; ?></b></center> <br><br>
+
+
+
+                             <?php if (($this->candidato['situacao'] == 0) or ($this->candidato['situacao'] == 3)) : ?>
+                                  <p>Inscrição confirmada mas você ainda não realizou o processo seletivo.</p>    
+                             <?php else: ?>
+                             
+                             
+                              <table class="table" >
+        <tbody>
+        <tr>
+            <td><b>Nome:<b></td>
+            <td><?php echo $this->candidato['nome']; ?></td>
+        </tr>
+        <tr>
+            <td><b>E-mail:<b></td>
+            <td> <?php echo $this->candidato['email']; ?></td>
+        </tr>
+        <tr>
+            <td><b>Curso:<b></td>
+            <td><?php echo $this->candidato['nomecurso']; ?></td>
+        </tr>
+        <tr>
+            <td><b>Nota Prova:<b></td>
+            <td><?php echo $this->candidato['notaprova']; ?></td>
+        </tr>
+        
+         <tr>
+            <td><b>Nota Redação:<b></td>
+            <td><?php echo $this->candidato['notaredacao']; ?></td>
+        </tr>
+        
+         <tr>
+            <td><b>Nota final:<b></td>
+            <td><?php echo $this->candidato['notafinal']; ?></td>
+        </tr>
+        
+        <?php if ($this->candidato['classificacao'] > 0): ?>
+        <tr>
+               <td><b>Classificação geral:<b></td>
+               <td><?php echo $this->candidato['classificacao']; ?>°  </td>
+        </tr>
+        <?php endif; ?>
+        
+         <tr>
+            <td><b>Treineiro:<b></td>
+            <td>
+                <?php
+                    switch ($this->candidato['treineiro']) {
+                        case 0:
+                            echo "Não";
+                            break;
+                        case 1:
+                            echo "Sim";
+                            break;
+                    }
+                
+                ?>
+            </td>
+        </tr>
+
+        <tr>
+                         
+               <br>                          
+              <td><b>Inscrito como Bolsista:<b> </td>
+              <td>
+              <?php
+                    switch ($this->candidato['bolsista']) {
+                        case 0:
+                            echo "Não";
+                            break;
+                        case 1:
+                            echo "Sim";
+                            break;
+                        case 2:
+                            echo "Sim";
+                            break;
+                    }
+    
+              ?>
+              </td>
+        </tr>
+        
+        <tr>
+            
+                                             <?php
+                                    
+
+                                 if($this->candidato['situacao'] == 0)
+                                 {
+                                     echo "<td><b>Situação:<b></td> <td>Cadastrado</td>";
+                                 }
+                                 elseif($this->candidato['situacao'] == 3)
+                                 {
+                                     echo "<td><b>Situação:<b></td> <td>Não Compareceu</td>";
+                                 }
+                                 elseif($this->candidato['situacao'] == 4)
+                                 {
+                                     echo "<td><b>Situação:<b></td> <td>Compareceu</td>";
+                                 }
+
+                                 elseif( $this->candidato['situacao'] == 1 and
+                                     $this->candidato['selecionadobolsa'] == 1 and
+                                     $this->candidato['treineiro'] == 0  and
+                                     $this->candidato['bolsista'] > 0) // BOLSISTA APROVADO E CLASSIFICADO
+                                 {
+                                     echo "<td><b>Situação:<b></td> <td>APROVADO - MATRÍCULA COM BOLSA</td>";
+                                 }
+                                 elseif( $this->candidato['situacao'] == 1 and
+                                     $this->candidato['selecionadobolsa'] == 0 and
+                                     $this->candidato['treineiro'] == 0  and
+                                     $this->candidato['bolsista'] > 0) // BOLSISTA APROVADO E NÃO CLASSIFICADO
+                                 {
+                                     echo "<td><b>Situação:<b></td> <td>APROVADO -  MATRÍCULA NORMAL SEM BOLSA</td>";
+                                 }
+                                 elseif( $this->candidato['situacao'] == 2 and
+                                     $this->candidato['selecionadobolsa'] == 0 and
+                                     $this->candidato['treineiro'] == 0  and
+                                     $this->candidato['bolsista'] > 0) // BOLSISTA REPROVADO
+                                 {
+                                     echo "<td><b>Situação:<b></td><td>REPROVADO</td>";
+                                 }
+                                 elseif( $this->candidato['situacao'] == 1 and
+                                     $this->candidato['selecionadobolsa'] == 0 and
+                                     $this->candidato['treineiro'] == 0  and
+                                     $this->candidato['bolsista'] == 0) // VESTIBULANDO APROVADO
+                                 {
+                                     echo "<td><b>Situação:<b></td><td> APROVADO</td>";
+                                 }
+                                 elseif( $this->candidato['situacao'] == 2 and
+                                     $this->candidato['selecionadobolsa'] == 0 and
+                                     $this->candidato['treineiro'] == 0  and
+                                     $this->candidato['bolsista'] == 0) // VESTIBULANDO NÃO CLASSIFICADO
+                                 {
+                                     echo "<td><b>Situação:<b></td> <td>REPROVADO</td>";
+                                 }
+                                 elseif( $this->candidato['situacao'] == 1 and
+                                     $this->candidato['treineiro'] == 1) // VESTIBULANDO TREINEIRO APROVADO
+                                 {
+                                     echo "<td><b>Situação:<b></td><td> APROVADO</td>";
+                                 }
+                                 elseif( $this->candidato['situacao'] == 2 and
+                                     $this->candidato['treineiro'] == 1) // VESTIBULANDO TREINEIRO REPROVADO
+                                 {
+                                     echo "<td><b>Situação:<b></td> <td>REPROVADO</td>";
+                                 }
+
+                                 ?>
+        </tr>
+        
+        
+       <tr>
+            <td colspan="2">
+                <?php
+                if($this->candidato['situacao'] == 0 or $this->candidato['situacao'] == 3 )
+                {
+                ?>
+                <a href="<?php echo sprintf("/inscricoes/pagamento/alterar/hash/%s",
+                    $this->candidato['hash']);?>" class="btn btn-block btn-info btn-xx">REAGENDAR PROVA
+                    <?php
+                    } else {
+                       
+                    }
+                ?>
+            </td>
+        </tr>         
+ </table>
+                              
+
+<p style="text-align: justify">
+
+                                 <?php if(   $this->candidato['situacao'] == 1 and
+                                     $this->candidato['selecionadobolsa'] == 1 and
+                                     $this->candidato['treineiro'] == 0  and
+                                     $this->candidato['bolsista'] > 0): // BOLSISTA APROVADO E CLASSIFICADO ?>
+
+                                    Parabéns por sua aprovação no processo seletivo de bolsista 2016/1.
+                                    Lembramos que as entrevistas para comprovação sócio econômica acontecerão do período 27 a 31 de outubro de 2015. Nossa equipe de atendimento entrará em contato para agendamento de sua entrevista e entrega da documentação.
+
+
+                                 <?php elseif(   $this->candidato['situacao'] == 1 and
+                                     $this->candidato['selecionadobolsa'] == 0 and
+                                     $this->candidato['treineiro'] == 0  and
+                                     $this->candidato['bolsista'] > 0): // BOLSISTA APROVADO E NÃO CLASSIFICADO ?>
+
+                                    Você foi aprovado no vestibular 2016/1, porém NÃO conseguiu classificação para BOLSISTA.
+                                    Caso tenha interesse em ingressar na faculdade, favor procurar a secretaria acadêmica para realizar sua matrícula no período de 21 de outubro a 30 de novembro de 2015.
+                                    Lembramos que temos opções de financiamento através do PRAVALER, onde o aluno paga 50% da mensalidade no dobro de tempo e sem juros.
+                                    Temos também a opção do FIES (Financiamento Estudantil) do Governo Federal, onde você pode financiar até 100% de sua mensalidade. Informe-se pelo telefone 2105-9001.
+
+
+                                 <?php elseif(   $this->candidato['situacao'] == 2 and
+                                     $this->candidato['selecionadobolsa'] == 0 and
+                                     $this->candidato['treineiro'] == 0  and
+                                     $this->candidato['bolsista'] > 0): // BOLSISTA REPROVADO ?>
+
+                                    Infelizmente você não conseguiu aprovação no Processo Seletivo para Bolsas Integrais.
+                                    Não desista.
+                                    Tente novamente no Processo Seletivo Normal para vagas remanescentes.
+                                    Reagende sua prova pelo site ou ligue para nossa central de atendimento 2105-9001.
+
+
+
+                                <?php elseif(   $this->candidato['situacao'] == 1 and
+                                     $this->candidato['selecionadobolsa'] == 0 and
+                                     $this->candidato['treineiro'] == 0  and
+                                     $this->candidato['bolsista'] == 0): // VESTIBULANDO APROVADO ?>
+
+                                    Verifique os documentos necessários para matrícula no link.
+
+
+                                    <a href="http://uniamerica.br/graduacao/documentos-necessarios-para-matricula/">DOCUMENTOS NECESSÁRIOS PARA MATRICULA</a>
+
+
+
+                                <?php elseif(   $this->candidato['situacao'] == 2 and
+                                     $this->candidato['selecionadobolsa'] == 0 and
+                                     $this->candidato['treineiro'] == 0  and
+                                     $this->candidato['bolsista'] == 0): // VESTIBULANDO NÃO CLASSIFICADO ?>
+
+                                    Infelizmente você não conseguiu aprovação neste processo seletivo.
+                                    Não desista.
+                                    Reagende sua prova pelo site ou ligue para nossa central de atendimento 2105-9001.
+
+                                 <?php elseif(   $this->candidato['situacao'] == 1 and
+                                     $this->candidato['treineiro'] == 1): // VESTIBULANDO TREINEIRO APROVADO ?>
+
+                                    Parabéns por sua aprovação como treineiro no processo seletivo 2016/1.
+                                    Aguardamos você para os próximos vestibulares da Uniamérica.
+
+                                 <?php elseif(   $this->candidato['situacao'] == 2 and
+                                     $this->candidato['treineiro'] == 1): // VESTIBULANDO TREINEIRO REPROVADO ?>
+
+                                    Infelizmente você não conseguiu aprovação neste processo seletivo. Não desista.
+
+
+                                 <?php endif; ?>
+
+                            <?php endif; ?>
+
+
+   </p>
+
+
+
+
+
+
+                                 <input type="button" class="btn btn-block btn-info btn-xx" value="voltar" onClick="window.history.back()">
+                        <?php else: ?>
+                            <p><b><h4>Digite abaixo o e-mail para visualizar o resultado.</h4></b></p>
+                            <br><br>
+                    <div class="col-sm-1">
+                        </div>
+
+                            <div class="col-sm-12">
+                                <label for="email">E-mail</label>
+                                <input id="email" type="email" size="35" name="email" class="capitalize Email required" title="email" required>
+                                <input class=".small.success.radius" type="submit">
+                            </div>
+
+
+
+                        <br><br><br>
+
+                        <?php endif ?>
+                    </div>
+                
+            </div>
+        </form>      
+
+    </div>
+</div>
+    </div>

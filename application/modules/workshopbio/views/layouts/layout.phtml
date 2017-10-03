@@ -1,0 +1,124 @@
+<!DOCTYPE html >
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title><?php echo $this->layout()->titulo; ?> | Workshop de Biomedicina Uniamérica</title>
+        <meta name="description" content="<?php echo $this->layout()->description; ?>">
+        <meta name="viewport" content="width=device-width">
+
+        <!-- Meta do Facebook -->
+        <meta property="og:locale" content="en_US">
+        <meta property="og:type" content="website">
+        <meta property="og:description" content="Os aspectos gerais da medicina estética e suas aplicações práticas">
+        <meta property="og:title" content="Workshop de Biomedicina">
+        <meta property="og:site_name" content="Workshop de Biomedicina">
+        <meta property="og:url" content="http://uniamerica.br/workshopbio">
+        <meta property="og:image" content="http://uniamerica.br/static/workshopbio/img/facebook.jpg">
+        <meta property="og:image:type" content="image/jpeg">
+        <meta property="fb:admins" content="100000467295246" />
+
+        <link rel="stylesheet" href="/static/workshopbio/css/estilos.css">
+        <link rel="stylesheet" href="/static/workshopbio/css/style.css">
+        <link rel="stylesheet" href="/static/workshopbio/css/slider.css">
+
+        <!-- html5.js for IE less than 9 -->
+        <!--[if lt IE 9]>
+            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+        <!-- css3-mediaqueries.js for IE less than 9 -->
+        <!--[if lt IE 9]>
+            <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+        <![endif]-->
+
+        <script src="/global/jquery-validation/lib/jquery.js"></script>
+        <script src="/global/jquery-validation/dist/jquery.validate.min.js"></script>
+        <script src="/global/jquery-validation/localization/messages_pt_BR.js"></script>
+        <script src="/global/jquery-validation/dist/additional-methods.js"></script>
+        <script src="/global/jquery.maskedinput.min.js"></script>
+        <script src="/global/global.js"></script>
+    <div id="fb-root"></div>
+    <script type="text/javascript">
+        window.___gcfg = {lang: 'pt-BR'};
+
+        (function() {
+            var po = document.createElement('script');
+            po.type = 'text/javascript';
+            po.async = true;
+            po.src = 'https://apis.google.com/js/platform.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(po, s);
+        })();
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id))
+                return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "//connect.facebook.net/pt_BR/all.js#xfbml=1";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+    <script type="text/javascript">
+        jQuery(function($) {
+            $('#nascimentodata').mask('99/99/9999');
+        });
+    </script>
+
+</head>
+<body>
+    <!-- Google Tag Manager -->
+    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NFF9VV"
+                      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script>(function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({'gtm.start':
+                        new Date().getTime(), event: 'gtm.js'});
+            var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                    '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-NFF9VV');</script>
+    <!-- End Google Tag Manager -->
+    <div class="geral">
+        <header>
+            <div id="header">
+                <h1>
+                    <a title="Workshop de Biomedicina - Uniamérica" href="<?php echo $this->url(array('controller' => 'workshopbio', 'action' => 'index',), null, true) ?>">
+                        <img alt="Logo Biomedicina" class="logo" width="250" height="100" src="http://uniamerica.br/static/workshopbio/img/logobio.png" />
+                    </a>
+                </h1>
+                <div class="box_social">
+                    <div class="g-plusone" data-size="tall"></div>
+                    <div class="fb-share-button" data-href="http://uniamerica.br/workshopbio" data-type="box_count" style="border:none;"></div>
+
+                </div>
+
+            </div>
+            </button>
+
+            <div class="mainmenu">
+                <ul>
+                    <li><a href="<?php echo $this->url(array('controller' => 'workshopbio', 'action' => 'index',), null, true) ?>"><i class="icon-home icon-large"></i>&nbsp;<main>Home</main><desc>Pagina inicial</desc></a></li>
+                    <li><a href="<?php echo $this->url(array('controller' => 'workshopbio', 'action' => 'sobre',), null, true) ?>"><i class="icon-comments icon-large"></i>&nbsp;<main>Sobre</main><desc>O Workshop</desc></a></li>
+                    <li><a href="<?php echo $this->url(array('controller' => 'workshopbio', 'action' => 'inscricoes',), null, true) ?>"><i class="icon-comments icon-large"></i>&nbsp;<main>Inscreva-se</main><desc>Inscrições ...</desc></a></li>
+                    <li><a href="<?php echo $this->url(array('controller' => 'workshopbio', 'action' => 'palestrantes',), null, true) ?>"><i class="icon-comments icon-large"></i>&nbsp;<main>Palestrante</main><desc>Dra. Ana Carolina</desc></a></li>
+                    <li><a href="<?php echo $this->url(array('controller' => 'workshopbio', 'action' => 'contato',), null, true) ?>"><i class="icon-tint icon-large"></i>&nbsp;<main>Contato</main><desc>Fale conosco</desc></a></li>
+                </ul>
+            </div>
+        </header>
+
+        <?php echo $this->layout()->content; ?>
+        <footer>
+            <div class="copyright">
+                <p>© Uniamérica 2014. Todos os direitos reservados.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

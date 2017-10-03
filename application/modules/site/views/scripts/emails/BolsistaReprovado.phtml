@@ -1,0 +1,179 @@
+<html>
+    <head>
+        <title>Relatório</title>
+        <meta charset="utf-8">
+        <style type="text/css">
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                background: #F3F3F3;
+                font-family: "Myriad Pro", helvetica, sans-serif;
+            }
+
+            form {
+                text-align: center;
+
+                margin: 10px auto;
+                text-shadow: 0 1px 0px rgba(255, 255, 255, 0.8);
+
+            }
+            form input {
+                margin: 10px;
+            }
+            form p {
+                color:red;
+            }
+
+            form input[type=submit]{
+                background-color: #7fbf4d;
+                border: 1px solid #63a62f;
+                border-bottom: 1px solid #5b992b;
+                border-radius: 3px;
+                color: #fff;
+                padding: 5px 0 5px 0;
+                text-align: center;
+                text-shadow: 0 -1px 0 #4c9021;
+                width: 100px;
+            }
+            article {
+
+                box-shadow: 5px 5px 15px #ccc;
+                margin: 40px auto;
+                background: fff;  
+            }
+            header {
+                text-align: center;
+                line-height: 4;
+            }
+            table {
+                width: 100%;
+            }
+            table tr {
+                font-size: 9pt;
+                line-height: 2;
+            }
+            table tr:nth-child(odd){
+                background: #DDDDDD;
+            }
+            table tr:hover{
+                background:#d4f2a6;
+                cursor: pointer;
+            }
+            .width {
+                width: 100px;
+            }
+            .titulo {
+                background-color: #000;
+                color: fff;
+                text-align: center;
+            }
+            footer {
+                text-align: left;
+                padding: 10px;
+                line-height: 2;
+                border-top: 1px #DDDDDD solid;
+            }
+            footer p {
+                color: forestgreen;
+            }
+        </style>
+    </head>
+    <body>
+        <form metod="post" method="post">
+            <label for="login">Usuário</label><input id="login" type="text" name="login">
+            <label for="senha">Senha</label><input id="senha" type="password" name="senha">
+            <input type='submit' value="Listar">
+            <?php
+            $login = "intensivao";
+            $senha = "Cbi08mio";
+
+            if (@$_POST['login'] <> "") {
+                if (
+                        $_POST['login'] === $login && $_POST['senha'] === $senha) {
+                    ?>
+                    <article>
+                        <header>
+                            <h1>Ralatório de inscrição do Intensivão</h1>
+                        </header>
+                        <table>
+                            <td class="titulo">Nome</td>
+                            <td class="titulo">Email</td>
+                            <td class="titulo width">CPF</td>
+                            <td class="titulo">identidade</td>
+                            <td class="titulo width">Residencia</td>
+                            <td class="titulo width">Comercial</td>
+                            <td class="titulo width">Celular</td>
+                            <td class="titulo">Estado civil</td>
+                            <td class="titulo">Logradouro</td>
+                            <td class="titulo">Numero</td>
+                            <td class="titulo">Bairro</td>
+                            <td class="titulo">CEP</td>
+                            <td class="titulo">Cidade</td>
+                            <td class="titulo">Escola</td>
+                            <td class="titulo">Boleto</td>
+                            <td class="titulo">Cartão</td>
+                            <?php
+                            $vboleto = 0;
+                            $vcartao = 0;
+                            foreach ($this->boleto as $item):
+                                $vboleto += $item['boleto'];
+                                $vcartao += $item['cartao'];
+                                ?>
+                                <tr>
+                                    <td><?php echo $item['nome'] ?></td>
+                                    <td><?php echo $item['email'] ?></td> 
+                                    <td><?php echo $item['cpf'] ?></td>
+                                    <td><?php echo $item['identidade'] ?></td>
+                                    <td><?php echo $item['telres'] ?></td>
+                                    <td><?php echo $item['telcom'] ?></td>
+                                    <td><?php echo $item['telcel'] ?></td>
+                                    <td><?php
+                                            switch ($item['codestadocivil']) {
+                                                case 0: echo '';
+                                                    break;
+                                                case 1: echo 'Solteiro';
+                                                    break;
+                                                case 2: echo 'Casado';
+                                                    break;
+                                                case 3: echo 'Divorciado';
+                                                    break;
+                                                case 4: echo 'Separado';
+                                                    break;
+                                                case 5: echo 'Viúvo';
+                                                    break;
+                                                case 6: echo 'União Estável';
+                                                    break;
+                                            }
+                                ?></td>
+                                    <td><?php echo $item['logradouro'] ?></td>
+                                    <td><?php echo $item['numero'] ?></td>
+                                    <td><?php echo $item['bairro'] ?></td>
+                                    <td><?php echo $item['cep'] ?></td>
+                                    <td><?php echo $item['cidade'] ?></td>
+                                    <td><?php echo $item['escola'] ?></td>
+                                    <td><?php echo number_format(($item['boleto'] / 100), 2, ",", ".") ?></td>
+                                    <td><?php echo number_format(($item['cartao'] / 100), 2, ",", ".") ?></td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </table>
+                        <footer>
+                            <p><strong><?php echo count($this->boleto); ?></strong> inscritos até o momento</p>
+                            <p>Total pago boleto: <?php echo number_format(($vboleto / 100), 2, ",", ".") ?></p>
+                            <p>Total pago cartão: <?php number_format(($vcartao / 100), 2, ",", ".") ?></p>
+                            <hr>
+                            <p><strong>Total: <?php echo number_format((($vboleto + $vcartao) / 100), 2, ",", ".") ?></strong></p>
+                        </footer>
+                    </article>
+
+                    <?php
+                } else {
+                    //caso contrario, mostra mensagem
+                    echo "<p>Dados não conferem!</p>";
+                }
+            }
+            ?>
+        </form>
+    </body>
+</html>

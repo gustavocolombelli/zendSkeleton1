@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Contato</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/dcalendar.picker.css" rel="stylesheet">
+<style type="text/css">
+#deceased{
+    background-color:#FFF3F5;
+  padding-top:10px;
+  margin-bottom:10px;
+}
+.remove_field{
+  float:right;  
+  cursor:pointer;
+  position : absolute;
+}
+.remove_field:hover{
+  text-decoration:none;
+}
+</style>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="js/jquery-1.12.4.js"></script>
+  <script src="js/dcalendar.picker.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="js/bootstrap.min.js"></script>
+  <script type='text/javascript'>
+  
+  </script>
+  </head>
+  <body>
+<div class="panel panel-primary" style="margin:20px;">
+  <div class="panel-heading">
+          <h3 class="panel-title">Contato</h3>
+  </div>
+<div class="panel-body">
+  <form action="" role="form" class="" id="form" method="post">
+<div class="col-md-12 col-sm-12">
+
+      <?php $item = $this->contato;?>
+        <div class="form-group col-md-6 col-sm-6">
+            <label for="nome">Nome* </label>
+            <input type="text" class="form-control input-sm" id="nome" value="<?php echo $item[0]['nome'] ?>" name="nome" maxlength="69" title="Somente letras são aceitas neste campo">
+        </div>
+
+        <div class="form-group col-md-6 col-sm-6">
+            <label for="email1">Email</label>
+            <input type="text" class="form-control input-sm" id="email1" value="<?php echo $item[0]['email1'] ?>" name="email1" maxlength="70">
+        </div>
+        <div class="form-group col-md-6 col-sm-6">
+            <label for="email2">Email</label>
+            <input type="text" class="form-control input-sm" id="email2" value="<?php echo $item[0]['email2'] ?>" name="email2" maxlength="70">
+        </div>
+        <div class="form-group col-md-6 col-sm-6">
+            <label for="email3">Email</label>
+            <input type="text" class="form-control input-sm" id="email3" value="<?php echo $item[0]['email3'] ?>" name="email3" maxlength="70">
+        </div>
+
+        <div class="form-group col-md-6 col-sm-6">
+            <label for="nomemantenedora">Mantenedora</label>
+            <input type="text" class="form-control input-sm" id="nomemantenedora" value="<?php echo $item[0]['nomemantenedora'] ?>" name="nomemantenedora" maxlength="44">
+        </div>
+
+       <div class="form-group col-md-6 col-sm-6">
+            <label for="nomeinstituicao">Instituição</label>
+            <input type="text" class="form-control input-sm" id="nomeinstituicao" value="<?php echo $item[0]['nomeinstituicao'] ?>" name="nomeinstituicao" maxlength="44">
+        </div>
+
+        <div class="form-group col-md-3 col-sm-3">
+            <label for="telefone1">Telefone</label>
+            <input type="text" class="form-control input-sm" id="telefone1" value="<?php echo $item[0]['telefone1'] ?>" name="telefone1" maxlength="44">
+        </div>
+
+        <div class="form-group col-md-3 col-sm-3">
+            <label for="telefone1">Telefone</label>
+            <input type="text" class="form-control input-sm" id="telefone1" value="<?php echo $item[0]['telefone2'] ?>" name="telefone1" maxlength="44">
+        </div>
+
+          <div class="form-group col-md-6 col-sm-6">
+            <label for="cidade">Cidade</label>
+            <input type="text" class="form-control input-sm" id="cidade" value="<?php echo $item[0]['cidade'] ?>" name="cidade" maxlength="44">
+        </div>
+
+
+       <div class="form-group col-md-3 col-sm-2">
+            <label for="bairro">Bairro</label>
+            <input type="text" class="form-control input-sm" id="bairro" value="<?php echo $item[0]['bairro'] ?>" name="bairro" maxlength="44">
+       </div>
+
+       <div class="form-group col-md-5 col-sm-2">
+            <label for="logradouro">Logradouro</label>
+            <input type="text" class="form-control input-sm" id="logradouro" value="<?php echo $item[0]['logradouro'] ?>" name="logradouro" maxlength="44">
+        </div>
+
+      <div class="form-group col-md-5 col-sm-2">
+            <label for="complemento">Complemento</label>
+            <input type="text" class="form-control input-sm" id="complemento" value="<?php echo $item[0]['complemento'] ?>" name="complemento" maxlength="44">
+        </div>
+
+      <div class="form-group col-md-2 col-sm-2">
+            <label for="numero">Numero</label>
+            <input type="text" class="form-control input-sm" id="numero" value="<?php echo $item[0]['numero'] ?>" name="numero" maxlength="15">
+        </div>
+
+        <div class="form-group col-md-3 col-sm-2">
+            <label for="origemdados">Origem dos Dados</label>
+            <input type="text" class="form-control input-sm" id="origemdados" value="<?php echo $item[0]['origemdados'] ?>" maxlength="49">
+        </div>     
+
+        <div class="form-group col-md-3 col-sm-2">
+            <label for="site">Site</label>
+            <input type="text" class="form-control input-sm" id="site" value="<?php echo $item[0]['site'] ?>" name="site" maxlength="49">
+        </div>
+
+        <div class="form-group col-md-3 col-sm-2">
+            <label for="atividades">Atividades</label>
+            <input type="text" class="form-control input-sm" id="atividades" value="<?php echo $item[0]['atividades'] ?>" name="atividades">
+        </div>       
+
+        <div class="form-group col-md-3 col-sm-2">
+            <label for="cep">CEP</label>
+            <input type="text" class="form-control input-sm" id="cep" value="<?php echo $item[0]['cep'] ?>" name="cep" pattern="[0-9][0-9][0-9][0-9][0-9]-[0-9][0-9][0-9]" title="Inserir no formato correto. (12345-678), Não esqueça dos ífen"> 
+            </div>
+
+        <div class="form-group col-md-3 col-sm-2">
+            <label for="funcao">Função</label>
+            <input type="text" class="form-control input-sm" id="funcao" value="<?php echo $item[0]['funcao'] ?>" name="funcao" maxlength="44">
+        </div>
+
+        <div class="form-group col-md-3 col-sm-2">
+            <label for="cargo">Cargo</label>
+            <input type="text" class="form-control input-sm" id="cargo" value="<?php echo $item[0]['cargo'] ?>" name="cargo" maxlength="44">
+        </div>
+        
+  <div class = "form-group col-md-2 col-sm-2">
+        <label for="uf">UF</label>
+        <select class="form-control input-sm" id="uf" name="uf" >
+    <option><?php echo $item[0]['uf'] ?></option>
+    <option>AC</option>
+    <option>AL</option>
+    <option>AP</option>
+    <option>AM</option>
+    <option>BA</option>
+    <option>CE</option>
+    <option>DF</option>
+    <option>ES</option>
+    <option>GO</option>
+    <option>MA</option>
+    <option>MT</option>
+    <option>MS</option>
+    <option>MG</option>
+    <option>PA</option>
+    <option>PB</option>
+    <option>PR</option>
+    <option>PE</option>
+    <option>PI</option>
+    <option>RJ</option>
+    <option>RN</option>
+    <option>RS</option>
+    <option>RO</option>
+    <option>RR</option>
+    <option>SC</option>
+    <option>SP</option>
+    <option>SE</option>
+    <option>TO</option>
+        </select>
+  </div>
+    <div class="col-md-4">
+  <div class="radio">
+    <label for="rad-0">
+      <input type="radio" name="publicaparticular" id="rad-0" value="Pública">
+      Pública
+    </label>
+    </div>
+  <div class="radio">
+    <label for="rad-1">
+      <input type="radio" name="publicaparticular" id="rad-1" value="Privada" checked="checked">
+      Privada
+    </label>
+  </div>
+</div>
+          <div class="form-group col-md-6 col-sm-6">
+        <label for="observacao">Observações Gerais</label>
+        <textarea class="form-control input-sm" id="observacao" rows="3" maxlength="500" name="observacao" ><?php echo $item[0]['observacao'] ?></textarea>
+     </div>
+</div>
+
+<div class="form-group col-md-7 ">
+<div class="form-group col-md-15 "> 
+
+</form>
+
+</div>
+
+</body>
+  <div class="form-group col-md-2 col-sm-2 pull-right" >
+      <input type="submit" class="btn btn-warning" onclick="return confirm('Você tem certeza que quer alterar este contato?');" value="Alterar!"/>
+      
+  </div>
+
+</html>

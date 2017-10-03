@@ -1,0 +1,1 @@
+a:6:{s:8:"email_de";s:19:"narnaldo@uri.com.br";s:7:"nome_de";s:14:"Arnaldo Nogaro";s:8:"telefone";s:14:"(54) 3520-9000";s:7:"assunto";s:32:"Relação de trabalhos aprovados";s:8:"mensagem";s:78:"Gostaria de saber quando sairá a relação dos trabalhos aprovados no evento?";s:5:"chave";s:32:"19fcf4bbd25f65255fa8bbc4938e4af3";}

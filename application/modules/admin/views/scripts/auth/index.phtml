@@ -1,0 +1,9 @@
+<div class="span12">
+	<?php if( $this->error ): ?>
+	    <div class='notification'>
+	    	<p><?php echo $this->error; ?></p>
+	    </div>
+	<?php endif; ?>
+	
+	<?php echo $this->form; ?>
+</div>

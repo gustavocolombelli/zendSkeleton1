@@ -1,0 +1,28 @@
+<section>
+
+    <div class="container">
+
+        <div class="col-sm-12">
+            <h1 class="TitulosPaginas">Problemas Comuns <small>Baby Cão Clínica Veterinária em Foz do Iguaçu</small></h1>
+
+            <div class="list-group col-sm-3">
+                <?php foreach ($this->atividades as $item): ?>
+                    <a href="#" class="list-group-item active"><?php echo $item['nome'] ?></a>
+                    <?php foreach ($this->atividades1 as $item1): ?>
+                        <?php if ($item1['categoria_idcategoria'] == $item['idcategoria']){?>
+                            <a href="/prob/interna/id/<?php echo $item1['idtipo'];?>" class="list-group-item"><?php echo $item1['nome'] ?></a>
+                        <?php } ?>
+                    <?php endforeach; ?>
+                <?php endforeach; ?>
+            </div>
+            <?php foreach ($this->tipo as $item): ?>
+                <div class="col-sm-9 TitulosPaginas">
+                    <h4><?php echo $item['nome'] ?></h4>
+                    <hr>
+                    <?php echo $item['descricao'] ?>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+
+</section>

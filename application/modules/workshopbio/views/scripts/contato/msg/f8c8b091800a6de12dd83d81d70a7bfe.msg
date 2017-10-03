@@ -1,0 +1,1 @@
+a:6:{s:8:"email_de";s:21:"isadilma2@hotmail.com";s:7:"nome_de";s:5:"Dilma";s:8:"telefone";s:14:"(45) 9969-7682";s:7:"assunto";s:25:"encelamento dos trabalhos";s:8:"mensagem";s:73:"Não consigo entrar e ver o encelamento dos trabalhos para apresentação";s:5:"chave";s:32:"f8c8b091800a6de12dd83d81d70a7bfe";}

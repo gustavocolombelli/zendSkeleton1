@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Academico - Uniamérica</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/telefonia1/static/css/bootstrap.css" media="screen">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="../bower_components/bootstrap/assets/js/html5shiv.js"></script>
+    <script src="../bower_components/bootstrap/assets/js/respond.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="/telefonia1/script.js"></script>
+    <script src="/telefonia1/static/jquery.js"></script>
+    <script src="/telefonia1/static/js/bootstrap.js"></script>
+    <script src="/telefonia1/static/bootswatch.js"></script>
+</head>
+<body>
+<div class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <a href="http://uniamerica.br/" class="navbar-brand"><img src="/telefonia1/static/img/logo50.gif"> </a>
+        <div class="navbar-header">
+
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar-main">
+
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes"><img src="/telefonia1/static/img/menu/academico.png"style="float:left; margin-right: 10px"> Ramais </a>
+
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</div>
+
+<div class="containernovo" style= "margin-top:60px;">
+    <h2>Regras para utilização do sistema de telefonia da Uniamérica:<br>(Atualizado em 02/2016)</h2>
+	<h3>Ligação para ramais internos:</h3>
+	<p>- Basta digitar o número do Ramal (Ex. 9015).</p>
+	<h3>Ligações externas:</h3>
+
+    <p>- Ligações locais (dentro de Foz), basta digitar 0 + Numero desejado (Ex. 0+35249400).</p>
+    <p>- Ligações externas longa-distância DDD, não há necessidade de digitar código de operadora, basta digitar 0 + 0 + DDD + Numero desejado <br>(Ex. ligação para São Paulo:0+011+36668110).</p>
+    <p>- Ligações internacionais, não há necessidade de digitar código de operadora, basta digitar 0 + 00 + COD PAIS + COD CIDADE + Numero desejado <br> (Ex. ligação para EUA:0+001+604+8227130).</p>
+
+ 	  
+
+	<h3>Captura de chamadas:</h3>
+
+    <p>- Tecle ** + ramal, para captura chamada de outro ramal. Ex **9090 para captuar a chamada que estiver tocando no ramal 9090.</p>
+    
+	<h3>Transferencia de chamadas:</h3>
+
+    <p>- Tecle *2 + ramal, para transferir ligação assistida (pode falar com destinatário antes de transferir).<br> (Ex durante uma chamada, digite *29090 para conversar perguntar ao ramal 9090 se deseja receber a ligação, em caso positivo, basta colocar o telefone no gancho).</p>
+    <p>- Tecle ## + ramal, para transferir ligação a cega (transfere direto destinatário).<br> (Ex. durante uma chamada, deseja-se transferi-la para o ramal 9090 diretamente, basta digitar ##9090 e colocar no gancho).</p>
+    
+    
+
+
+
+</div>
+
+
+
+<div class="containernovo" style= "margin-top:30px;">
+
+    <!-- Main hero unit for a primary marketing message or call to action -->
+    <div class="hero-unit">
+        <table id="tabela" class="table table">
+            <thead>
+            <tr style="text-align: center;">
+                <th>Nome</th>
+                <th>Ramal</th>
+                <th>E-mail</th>
+                <th>Departamento</th>
+            </tr>
+            <tr>
+                <th><input type="text" id="txtColuna1"/></th>
+                <th><input type="text" id="txtColuna2"/></th>
+                <th><input type="text" id="txtColuna3"/></th>
+                <th><input type="text" id="txtColuna4"/></th>
+            </tr>
+            </thead>
+            <tbody>
+
+
+            <?php foreach ($this->telefones as $item):  ?>
+                <tr>
+                    <td><?php echo $item['nome'] ?></td>
+                    <td><?php echo $item['ramal'] ?></td>
+                     <td><?php echo $item['email'] ?></td>
+                    <td><?php echo $item['departamento'] ?></td>
+                </tr>
+            <?php endforeach; ?>
+
+
+            </tbody>
+        </table>
+    </div>
+
+
+</div> <!-- /container -->
+
+</body>
+</html>

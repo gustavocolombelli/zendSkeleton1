@@ -1,0 +1,32 @@
+
+<section>
+
+    <div class="container">
+
+        <div class="col-sm-12">
+            <h1 class="TitulosPaginas">Serviços que oferecemos <small>Baby Cão Clínica Veterinária em Foz do Iguaçu</small></h1>
+
+
+            <div class="alert alert-warning TitulosPaginas" role="alert">
+                <p>
+                    Em nossa Clínica procuramos garantir que seu animal de estimação receberá um tratamento completo e com qualidade, para isso, além de contarmos com grandes profisionais, procuramos oferecer serviços que abrangem todas as áreas do tratamento animal.
+                </p>
+            </div>
+
+            <ul class="list-unstyled list-inline TitulosPaginas">
+                <?php foreach ($this->atividades as $item): ?>
+                <li class="col-sm-6 MinServicos">
+                    <Img src="/static/upload/servico/<?php echo $item['img'] ?>" class="img-rounded">
+                    <h3><?php echo $item['nome'] ?></h3>
+                    <p>
+                        <?php echo $item['descricao'] ?>
+                    </p>
+                </li>
+                <?php endforeach; ?>
+
+
+            </ul>
+        </div>
+    </div>
+
+</section>

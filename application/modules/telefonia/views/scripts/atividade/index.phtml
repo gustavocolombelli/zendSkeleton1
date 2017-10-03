@@ -1,0 +1,57 @@
+<?php if (count($this->atividades) != 0){?>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Data/Hora - Inicio</th>
+        <th>Data/Hora - Termino</th>
+        <th>Tempo Total</th>
+        <th>Solicitante</th>
+        <th>Atividade</th>
+        <th>Ação</th>
+      </tr>
+    </thead>
+    <tbody>
+     
+        <?php foreach ($this->atividades as $item): ?>
+            <tr> 
+              <td><?php echo $item['codgrlatividadesti'];?></td>
+              <td><?php echo $teste = date('m/d/Y H:i:s', strtotime($item['datainicio'].$item['horainicio']));?></td>
+              <td><?php echo $teste2 = date('m/d/Y H:i:s', strtotime($item['datatermino'].$item['horatermino']));?></td>
+          <?php 
+                     $entrada = $item['horainicio'];
+                     $saida = $item['horatermino'];
+                     $hora1 = explode(":",$entrada);
+                     $hora2 = explode(":",$saida);
+                     $acumulador1 = ($hora1[0] * 3600) + ($hora1[1] * 60) + $hora1[2];
+                     $acumulador2 = ($hora2[0] * 3600) + ($hora2[1] * 60) + $hora2[2];
+                     $resultado = $acumulador2 - $acumulador1;
+                     $hora_ponto = floor($resultado / 3600);
+                     $resultado = $resultado - ($hora_ponto * 3600);
+                     $min_ponto = floor($resultado / 60);
+                     $resultado = $resultado - ($min_ponto * 60);
+                     $secs_ponto = $resultado;
+          ?>
+              <td><?php echo  $hora_ponto."H:".$min_ponto."M";  ?></td>
+              <td><?php echo $item['solicitante'];?></td>
+              <td><?php echo $item['descricao'];?></td>
+              <td><a href="/geral/atividade/editar/id/<?php echo $item['codgrlatividadesti'];?>"><button type="button" class="btn btn-warning">Editar</button></a></td>
+            </tr>
+        <?php endforeach; ?>
+
+    </tbody>
+  </table>
+
+<?php }else{ ?>
+
+     <div class="alert alert-info" style="text-align:center">
+            Não foi encontrada nenhuma Atividade Cadastrada.
+     </div>
+
+ <?php } ?>
+
+
+    <div class="col-md-12" style="text-align:center">
+      <a href="/geral/atividade/cadastrar"><button type="button" class="btn btn-primary">Cadastrar Nova Atividade</button></a>
+    </div>
+   <br>

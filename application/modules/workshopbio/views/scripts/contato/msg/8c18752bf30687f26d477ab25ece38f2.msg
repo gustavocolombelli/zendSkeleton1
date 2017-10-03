@@ -1,0 +1,2 @@
+a:6:{s:8:"email_de";s:28:"vamiriavelasquez@hotmail.com";s:7:"nome_de";s:24:"Valmiria Costa Velasquez";s:8:"telefone";s:14:"(45) 3526-5487";s:7:"assunto";s:26:"carga horaria do congresso";s:8:"mensagem";s:163:"eu só posso assistir o congresso na parte da noite. como fica a minha carga horária no certificado?
+gostaria de saber se posso participar só a noite. obrigado.";s:5:"chave";s:32:"8c18752bf30687f26d477ab25ece38f2";}

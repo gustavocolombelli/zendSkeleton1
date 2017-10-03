@@ -1,0 +1,150 @@
+<?php $this->layout()->titulo='Inscrições'; ?>
+<?php $this->layout()->description='Inscreva-se para o Workshop de Biomedicina'; ?>
+  <div class="container-12"  style ="height:50px">
+    <div class="info">
+
+        <h3>Reimprimir boleto.</h3>
+        <p>Caso já tenha efetuado sua inscrição e deseja reimprimir o boleto <a href="<?php echo $this->url(array('controller' => 'workshopbio', 'action' => 'inscricoes'), null, true) ?>/reimprimir" target="blank_">clique aqui!</a></p>
+    </div>
+  </div>
+
+
+<div class="container-12">
+
+                          <?php
+                if(count($this->cadastro->getMessages()))
+                {
+
+                    ?>
+
+                        <div class="info" style="background-color:#DFF2BF; color: #EE4646; opacity: 20 ">
+                                <?php
+
+                                    foreach ($this->cadastro->getMessages() as $elemName => $messages)
+                                    {
+                                        foreach ($messages as $message)
+                                        {
+                                            $label = $this->cadastro->getElement($elemName)->getLabel();
+                                            echo sprintf("<p style='padding:10px 0 0 '>%s: %s</p>", $label, $message);
+                                        }
+                                    }
+                                ?>
+
+                        </div>
+                <?php
+                }
+                ?>
+
+    <form action="" method="post" id="frmInscricao" name="frmInscricao" enctype="multipart/form-data">
+        <div class="grid-4">
+            <label for="nome" class="nome"><?php echo $this->cadastro->nome->getLabel()?></label>
+            <?php echo $this->cadastro->nome?>
+        </div>
+
+        <div class="grid-4">
+            <label for="email"><?php echo $this->cadastro->email->getLabel()?></label>
+            <?php echo $this->cadastro->email?>
+        </div>
+
+        <div class="grid-4">
+            <label for="nascimentodata"><?php echo $this->cadastro->nascimentodata->getLabel()?></label>
+            <?php echo $this->cadastro->nascimentodata?>
+        </div>
+        <div class="grid-4">
+            <label for="sexo"><?php echo $this->cadastro->sexo->getLabel()?></label>
+            <?php echo $this->cadastro->sexo?>
+        </div>
+        <div class="grid-4">
+            <label for="codestadocivil"><?php echo $this->cadastro->codestadocivil->getLabel()?></label>
+            <?php echo $this->cadastro->codestadocivil?>
+        </div>
+        <div class="grid-4">
+            <label for="logradouro"><?php echo $this->cadastro->logradouro->getLabel()?></label>
+            <?php echo $this->cadastro->logradouro?>
+        </div>
+        <div class="grid-4">
+            <label for="numero"><?php echo $this->cadastro->numero->getLabel()?></label>
+            <?php echo $this->cadastro->numero?>
+        </div>
+        <div class="grid-4">
+            <label for="complemento"><?php echo $this->cadastro->complemento->getLabel()?></label>
+            <?php echo $this->cadastro->complemento?>
+        </div>
+
+        <div class="grid-4">
+            <label for="bairro"><?php echo $this->cadastro->bairro->getLabel()?></label>
+            <?php echo $this->cadastro->bairro?>
+        </div>
+        <div class="grid-4">
+            <label for="cidade"><?php echo $this->cadastro->cidade->getLabel()?></label>
+            <?php echo $this->cadastro->cidade?>
+        </div>
+        <div class="grid-4">
+            <label for="uf"><?php echo $this->cadastro->estado->getLabel()?></label>
+            <?php echo $this->cadastro->estado?>
+        </div>
+        <div class="grid-4">
+            <label for="cep"><?php echo $this->cadastro->cep->getLabel()?></label>
+            <?php echo $this->cadastro->cep?>
+        </div>
+
+        <div class="grid-4">
+            <label for="pais"><?php echo $this->cadastro->pais->getLabel()?></label>
+            <?php echo $this->cadastro->pais?>
+        </div>
+        <div class="grid-4">
+            <label for="identidade"><?php echo $this->cadastro->identidade->getLabel()?></label>
+            <?php echo $this->cadastro->identidade?>
+        </div>
+        <div class="grid-4">
+            <label for="cpf"><?php echo $this->cadastro->cpf->getLabel()?></label>
+            <?php echo $this->cadastro->cpf?>
+        </div>
+        <div>
+            <div class="grid-4">
+                <label for="telcel"><?php echo $this->cadastro->telcel->getLabel()?></label>
+                <?php echo $this->cadastro->telcel?>
+            </div>
+            <div class="grid-4">
+                <label for="telres"><?php echo $this->cadastro->telres->getLabel()?></label>
+                <?php echo $this->cadastro->telres?>
+            </div>
+            <div class="grid-4">
+                <label for="telcom"><?php echo $this->cadastro->telcom->getLabel()?></label>
+               <?php echo $this->cadastro->telcom?>
+            </div>
+        </div>
+        <div class="grid-4">
+            <label for="tipo"><?php echo $this->cadastro->tipo->getLabel()?></label>
+            <?php echo $this->cadastro->tipo?>
+        </div>
+        <div class="grid-4">
+            <label for="ra"><?php echo $this->cadastro->ra->getLabel()?></label>
+            <?php echo $this->cadastro->ra?>
+        </div>
+
+        <div class="grid-7">
+            <input type="submit" value="Gravar" class="btnGravar">
+            <input type="reset" value="Limpar">
+        </div>
+
+
+    </form>
+</div>
+
+
+<script type="text/javascript">
+
+           var $state = $('#tipo'), $province = $('#ra');
+            $state.change(function () {
+                if ($state.val() == '1022') {
+                    $province.removeAttr('disabled');
+                    $province.attr('required', 'required').val('');
+                } else {
+                    $province.attr('disabled', 'disabled').val('');
+                    $province.removeAttr('required');
+                }
+            }).trigger('change');
+
+</script>
+

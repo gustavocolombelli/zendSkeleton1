@@ -1,0 +1,31 @@
+<div class="container-12">
+	<?php
+		if ($this->congresso['codtabelaprecoatividade'] == 990)
+	       {
+	       	echo $this->render('inscricoes/confirmacao_ouvintes.phtml');
+	    	} else
+	    	{
+	        echo $this->render('inscricoes/confirmacao_apresentador.phtml');
+	        }
+	?>
+
+
+    <div class="grid-12">
+		<center>
+			    <div class="info">
+			        <h3>Escolha a forma de pagamento<h3>
+			    </div>
+
+		</center>
+	</div>
+	<div class="grid-7">
+		<center>
+			<a class="chave" href="<?php echo sprintf("%s/workshopbio/inscricoes/pagamento/chave/%s",$this->serverUrl(),$this->chave); ?>" target="blank_"> IMPRIMIR BOLETO </a>
+		</center>
+	</div>
+	<div class="grid-7">
+		<center>
+
+		</center>
+	</div>
+</div>

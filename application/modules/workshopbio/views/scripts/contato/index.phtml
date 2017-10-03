@@ -1,0 +1,85 @@
+<?php $this->layout()->titulo='Contato'; ?>
+<?php $this->layout()->description='Entre em contato e saiba mais sobre o Workshop'; ?><div class="container-12">
+    <div class="grid-12">
+        <h2 class="title_h1">NOSSA LOCALIZAÇÃO</h2>
+        <br>
+        <iframe class="iframe_mapa" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com.br/maps?q=uniam%C3%A9rica+foz&amp;hl=pt-BR&amp;ie=UTF8&amp;sll=-14.239424,-53.186502&amp;sspn=66.604122,114.169922&amp;hq=uniam%C3%A9rica+foz&amp;radius=15000&amp;t=m&amp;hnear=&amp;ll=-25.466292,-54.573812&amp;spn=0.023247,0.068665&amp;z=14&amp;output=embed"></iframe>
+    </div>
+    <div class="details">
+        <span class="google_maps icon black"></span><span>Tarquino Joslin dos Santos nº 1000 - Jd. Universitário 
+            Foz do Iguaçu - PR - Brasil</span>
+        <span class="phone icon black"></span><span>55 45 2105-9000
+        </span>
+        <span class="e-mail icon black"></span><span class="color">congresso@uniamerica.br</span>
+    </div>
+    <div class="show-errors">
+        <div class="error">
+            <span></span>
+            <ul class="validationSummary"></ul>
+        </div>
+    </div>
+    <div class="grid-12">
+        <h2 class="title_h1">INFORME SEUS DADOS</h2>
+    </div>
+    <form id="contato" name="contato" enctype="application/x-www-form-urlencoded" method="post" class="formulario" action="">
+        <div class="grid-4">
+            <label for="nome" class="nome">Nome</label>
+            <input id="nome" type="text" name="nome" class="capitalize required" title="Nome: Preenchimento obrigatório.">
+        </div>
+
+        <div class="grid-4">
+            <label for="email" class="email">E-mail</label>
+            <input id="email" type="email" name="email" class="required" title="Email: inválido.">
+        </div>
+
+        <div class="grid-4">
+            <label for="telefone" class="telefone">Telefone</label>
+            <input id="telefone" type="text" name="telefone" class="telefone required" title="Telefone: Preenchimento obrigatório.">
+        </div>
+
+        <div class="grid-12">
+            <label for="assunto" class="assunto">Assunto</label>
+            <input id="assunto" type="text" name="assunto" class="required" title="Assunto: Preenchimento obrigatório.">
+        </div>
+
+        <div class="grid-12">
+            <label for="mensagem" class="mensagem">Mensagem</label>
+            <textarea id="mensagem" type="text" name="mensagem" class="required" title="Mensagem: Preenchimento obrigatório."></textarea>
+            <input type="submit" value="Enviar" class="btnGravar">
+        </div>
+    </form>
+</div>
+<script type="text/javascript">
+    $(document).ready(function()
+    {
+
+        $(".capitalize").capitalize();
+        $(".telefone").telefone();
+
+        $("#contato").validate(
+                {
+                    focusInvalid: false,
+                    errorElement: 'span',
+                    errorContainer: ".validationSummary",
+                    errorLabelContainer: ".validationSummary",
+                    wrapper: "li",
+                    invalidHandler: function(e, validator) {
+                        $('.show-errors').css('display', 'block')
+                        $('.btnGravar').removeAttr('disabled', 'disabled');
+                        var errors = validator.numberOfInvalids();
+                        if (errors) {
+                            var message = errors == 1
+                                    ? 'Encontramos apenas 1 informação que não foi preenchida corretamente, veja se a informação abaixo pode lhe auxiliar:' :
+                                    'Encontramos apenas ' + errors + ' informações que não foram preenchidas corretamente, mas não se preocupe pois iremos lhe ajudar, veja se as dicas abaixo ajudam:';
+
+                            $("div.error span").html(message);
+                        }
+                    },
+                    submitHandler: function(form) {
+                        $('.btnGravar').attr('disabled', 'disabled');
+                        form.submit();
+                    },
+                    onkeyup: false
+                });
+    });
+</script>

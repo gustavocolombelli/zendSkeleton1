@@ -1,0 +1,72 @@
+<?php $this->layout()->titulo='Reimprimir'; ?>
+<?php $this->layout()->description='Reimprimir boleto para Workshop de Biomedicina'; ?>
+<div class="container-12">
+    <div class="info">
+        <h3>Reimprimir boleto.</h3>
+        <p>Caso já tenha efetuado sua inscrição e deseja reimprimir o boleto preencha os campos a baixo:</p>
+    </div>
+    <?php
+    if ($this->erro == 1) {
+        echo '<div style="display:block;" class="show-errors">
+                <div class="error">
+                    Atenção os dados não conferem. 
+                </div>
+              </div>';
+    }
+    ?>
+    <div class="show-errors">
+        <div class="error">
+            <span></span>
+            <ul class="validationSummary"></ul>
+        </div>
+    </div>
+    <form action="" method="post" id="frmReimprimir" name="frmReimprimir" enctype="multipart/form-data">
+        <div class="grid-6">
+            <label for="email">E-mail</label>
+            <input id="email" type="email" name="email" class="required"  title="Endereço de e-mail inválido">
+        </div>
+
+        <div class="grid-4">
+            <label for="nascimentodata">Data de Nascimento</label>
+            <input id="nascimentodata" type="text" name="nascimentodata" class="required dateBR" title="Data de nascimento inválida.">
+        </div>
+        <div class="grid-3">
+            <p>
+                <input type="submit" value="Imprimir boleto" class="btnGravar">
+            </p>
+        </div
+
+    </form>
+</div>
+<script type="text/javascript">
+    $(document).ready(function()
+    {
+
+
+        $("#frmReimprimir").validate(
+                {
+                    focusInvalid: false,
+                    errorElement: 'span',
+                    errorContainer: ".validationSummary",
+                    errorLabelContainer: ".validationSummary",
+                    wrapper: "li",
+                    invalidHandler: function(e, validator) {
+                        $('.show-errors').css('display', 'block')
+                        $('.btnGravar').removeAttr('disabled', 'disabled');
+                        var errors = validator.numberOfInvalids();
+                        if (errors) {
+                            var message = errors == 1
+                                    ? 'Encontramos apenas 1 informação que não foi preenchida corretamente, veja se a informação abaixo pode lhe auxiliar:' :
+                                    'Encontramos apenas ' + errors + ' informações que não foram preenchidas corretamente, mas não se preocupe pois iremos lhe ajudar, veja se as dicas abaixo ajudam:';
+
+                            $("div.error span").html(message);
+                        }
+                    },
+                    submitHandler: function(form) {
+                        $('.btnGravar').attr('disabled', 'disabled');
+                        form.submit();
+                    },
+                    onkeyup: false
+                });
+    });
+</script>

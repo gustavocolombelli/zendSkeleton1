@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Relatorio de Ocorrencias abertas</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h3>Histórico de Chamados</h3>
+  <div class="form-group">
+      <a href="/index/cadastroocorrencia" class="btn btn-info" role="button">Cadastrar Ocorrência</a>
+      <a href="#" class="btn btn-succes" role="button">Finalizados</a>
+      <a href="#" class="btn btn-danger" role="button">Não respondidos</a>
+      <a href="#" class="btn btn-warning" role="button">Não fechados</a>
+
+ <div class="form-group">
+ 
+      
+
+  </div>
+  </div>
+
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nome Solicitante</th>
+        <th>Nome Atendente</th>
+        <th>Ocorrência</th>
+        <th>Abertura</th>
+        <th>Atendimento</th>
+        <th>Fechamento</th>
+      
+      </tr>
+    </thead>
+    <tbody>
+      <?php foreach ($this->ocorrencias as $item):  ?>
+          <?php if($item['statusreg']==3): ?>
+              <tr class="warning">
+                  <td><?php echo $item['nome_solicitante'] ?></td>
+                  <td><?php echo $item['nome_atendente']?></td>
+                  <td><?php echo $item['tipo_problema']?></td>
+                  <td><?php echo $item['abertura']?></td>
+                  <td><?php echo $item['atendimento']?></td>
+                  <td><?php echo $item['solucao']?></td>
+          <?php endif ?>
+
+          <?php if($item['statusreg']==2): ?>
+              <tr class="success">
+                  <td><?php echo $item['nome_solicitante'] ?></td>
+                  <td><?php echo $item['nome_atendente']?></td>
+                  <td><?php echo $item['tipo_problema']?></td>
+                  <td><?php echo $item['abertura']?></td>
+                  <td><?php echo $item['atendimento']?></td>
+                  <td><?php echo $item['solucao']?></td>
+          <?php endif ?>
+
+          <?php if($item['statusreg']==1): ?>
+              <tr class="danger">
+                  <td><?php echo $item['nome_solicitante']?></td>
+                  <td><?php echo $item['nome_atendente']?></td>
+                  <td><?php echo $item['tipo_problema']?></td>
+                  <td><?php echo $item['abertura']?></td>
+                  <td><?php echo $item['atendimento']?></td>
+                  <td><?php echo $item['solucao']?></td>
+          <?php endif ?>
+          
+
+          </tr>
+    <?php endforeach; ?>
+
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>

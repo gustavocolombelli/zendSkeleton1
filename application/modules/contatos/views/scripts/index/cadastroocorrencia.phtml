@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>Cadastro de Ocorrência</title>
+
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/dcalendar.picker.css" rel="stylesheet">
+<style type="text/css">
+
+</style>
+
+  </script>
+  </head>
+  <body>
+<div class="panel panel-primary" style="margin:20px;">
+  <div class="panel-heading">
+          <h3 class="panel-title">Registro de atendimento de Ocorrência</h3>
+  </div>
+
+  <form action="" role="form" class="" id="form" method="post">
+<div class="col-md-12 col-sm-12">
+        
+        <div class="form-group col-md-6 col-sm-6">
+            <label for="nomeAtendente">Nome solicitante* </label>
+            <input type="text" class="form-control input-sm" id="nomeAtendente" placeholder="Nome do solicitante" name="nomeSolicitante" maxlength="69" required="required" pattern="[a-z\s]+$" title="Somente letras são aceitas neste campo">
+        </div>
+
+        <div class="form-group col-md-6 col-sm-6">
+            <label for="nome">Nome atendente* </label>
+            <input type="text" class="form-control input-sm" id="nome" placeholder="Nome do atendente" name="nomeAtendente" maxlength="69" required="required" pattern="[a-z\s]+$" title="Somente letras são aceitas neste campo">
+        </div>
+        
+  <div class = "form-group col-md-2 col-sm-2">
+        <label for="tipoProblema">Tipo do Problema</label>
+        <select class="form-control input-sm" id="tipoProblema" name="tipoProblema" >
+    <option>- Tipo Problema - </option>
+    <option>Internet e Redes</option>
+    <option>Servidor Local</option>
+    <option>Servidor Remoto</option>
+        </select>
+  </div>
+
+          <div class="form-group col-md-6 col-sm-6">
+        <label for="detalhamentoSolicitacao">Detalhamento da solicitação</label>
+        <textarea class="form-control input-sm" id="detalhamentoSolicitacao" rows="3" maxlength="500" 
+                  name="detalhamentoSolicitacao"></textarea>
+          </div>
+
+        <div class="form-group col-md-6 col-sm-6">
+        <label for="detalhamentoAtendimento">Detalhamento do atendimento</label>
+        <textarea class="form-control input-sm" id="detalhamentoAtendimento" rows="3" maxlength="500" 
+                  name="detalhamentoAtendimento"></textarea>
+        </div>
+</div>
+
+
+<div class="form-group col-md-7 ">
+<div class="form-group col-md-15 "> 
+</form>
+
+  <div class="form-group">
+    <div class="col-md-8">
+      <input type="submit" class="btn btn-primary" value="Enviar"/>
+      <a href="/index" class="btn btn-danger" role="button">Cancelar</a>
+    </div>
+  </div>
+
+  
+
+</html>

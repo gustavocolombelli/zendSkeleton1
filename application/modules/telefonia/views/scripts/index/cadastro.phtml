@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Academico - Uniamérica</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/telefonia1/static/css/bootstrap.css" media="screen">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="../bower_components/bootstrap/assets/js/html5shiv.js"></script>
+    <script src="../bower_components/bootstrap/assets/js/respond.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="/telefonia1/script.js"></script>
+    <script src="/telefonia1/static/jquery.js"></script>
+    <script src="/telefonia1/static/js/bootstrap.js"></script>
+    <script src="/telefonia1/static/bootswatch.js"></script>
+</head>
+<body>
+
+
+<div class="containernovo" style= "margin-top:30px;">
+<br>
+    <a class="btn btn-small btn-info" href="/telefonia/index/novo">
+        Adicionar Novo
+    </a>
+
+    <!-- Main hero unit for a primary marketing message or call to action -->
+    <div class="hero-unit">
+        <table id="tabela" class="table table">
+            <thead>
+            <tr style="text-align: center;">
+                <th>Nome</th>
+                <th>Ramal</th>
+                  <th>Email</th>
+                <th>Departamento</th>
+                <th>Excluir</th>
+            </tr>
+            <tr>
+                <th><input type="text" id="txtColuna1"/></th>
+                <th><input type="text" id="txtColuna2"/></th>
+                <th><input type="text" id="txtColuna3"/></th>
+                <th><input type="text" id="txtColuna4"/></th>
+            </tr>
+            </thead>
+            <tbody>
+
+
+            <?php foreach ($this->telefones as $item):  ?>
+                <tr>
+                    <td><?php echo $item['nome'] ?></td>
+                    <td><?php echo $item['ramal'] ?></td>
+                      <td><?php echo $item['email'] ?></td>
+                    <td><?php echo $item['departamento'] ?></td>
+                    <td>
+                    <a class="btn btn-small btn-danger" href="/telefonia/index/excluircontato/id/<?php echo $item['codtelefonia'] ?>">
+                        Excluir
+                    </a>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+
+
+            </tbody>
+        </table>
+    </div>
+
+
+</div> <!-- /container -->
+
+</body>
+</html>

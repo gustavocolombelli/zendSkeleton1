@@ -1,0 +1,56 @@
+<style> 
+    .mensagem
+    {
+        text-shadow: 0px 1px 0px #ccc;
+        border-radius: 10px;
+        margin-top: 80px;
+        line-height: 2;
+        background:#5e9e2e;
+        color: #FFF;
+        width:100%;
+        height:38px;
+    }
+    
+    .mensagem a {
+        text-decoration: none;
+        color: #FFF;
+    }
+</style>
+<div class="container-12">
+    <div class="grid-12">
+        <div id="slideshow-wrap">
+            <input type="radio" id="button-1" name="controls" checked="checked"/>
+            <label for="button-1"></label>
+            <input type="radio" id="button-2" name="controls"/>
+            <label for="button-2"></label>
+            <input type="radio" id="button-3" name="controls"/>
+            <label for="button-3"></label>
+
+            <label for="button-1" class="arrows" id="arrow-1"></label>
+            <label for="button-2" class="arrows" id="arrow-2"></label>
+            <label for="button-3" class="arrows" id="arrow-3"></label>
+            <div id="slideshow-inner">
+                <ul>
+                    <li id="slide1">
+                        <a href="<?php echo $this->url(array('controller' => 'congresso', 'action' => 'inscricoes',), null, true) ?>">
+                            <img src="/static/congresso/img/slider1.jpg" />
+                        </a>
+                    </li>
+                    <li id="slide2">
+                        <a href="<?php echo $this->url(array('controller' => 'congresso', 'action' => 'congresso',), null, true) ?>"><img src="/static/congresso/img/slider2.jpg" /></a>
+                    </li>
+                    <li id="slide3">
+                        <a href="<?php echo $this->url(array('controller' => 'congresso', 'action' => 'programacao',), null, true) ?>">
+                            <img src="/static/congresso/img/slider3.jpg" />
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="mensagem">
+            <center>
+                <a href="http://uniamerica.br/static/congresso/lista.pdf" target="blank_"><h2>Lista dos trabalhos aprovados</h2></a>
+            </center>
+        </div>
+    </div>
+</div>

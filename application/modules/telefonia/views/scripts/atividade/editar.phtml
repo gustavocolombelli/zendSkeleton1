@@ -1,0 +1,51 @@
+<form name="frmCadastrar" method="post" id="frmCadastrar" action="">
+
+	<legend>Cadastrar Atividade</legend>
+	<!-- Linha 1 --> 
+	  <div class="col-lg-2">
+
+	  <div class="form-group">
+	    <label for="">Data Inicio</label>
+	    
+	   <div class="bfh-datepicker" data-format="d/m/y" data-date="<?php echo date('m/d/Y', strtotime($this->latividades['datainicio'])); ?>" data-name="datainicio"> </div>
+	  </div>
+	  </div><!-- /.col-lg-6 -->
+	  <div class="col-lg-2">
+	    <div class="form-group">
+	      <label for="">Hora Inicio</label>
+	      <div class="bfh-timepicker" data-time="<?php echo $this->latividades['horainicio']; ?>" data-name="horainicio"></div>
+	    </div>
+	  </div><!-- /.col-lg-6 -->
+
+	<!-- Linha 3 --> 
+	  <div class="col-lg-2">
+	  <div class="form-group">
+	    <label for="">Data Termino</label>
+	   <div class="bfh-datepicker" data-format="d/m/y" data-date="<?php echo date('m/d/Y', strtotime($this->latividades['datatermino'])); ?>" data-name="datatermino"></div>
+	  </div>
+	  </div><!-- /.col-lg-6 -->
+	  <div class="col-lg-2">
+	    <div class="form-group">
+	      <label for="">Hora Termino</label>
+	      <div class="bfh-timepicker" data-time="<?php echo $this->latividades['horatermino']; ?>" name="horatermino" data-name="horatermino"></div>
+	    </div>
+	  </div><!-- /.col-lg-6 -->
+
+	  <div class="col-lg-3">
+	  <div class="form-group">
+	    <label for="">Solicitante</label>
+	    <input type="text" class="form-control" name="solicitante" value= "<?php echo $this->latividades['solicitante']; ?>">
+	  </div>
+	  </div><!-- /.col-lg-6 -->
+
+
+	 <div class="col-lg-11">
+	    <div class="form-group">
+	      <label for="">Descrição da Atividade</label>
+	        <textarea rows="4" cols="50" id="" class="form-control" name="descricao"> <?php echo $this->latividades['descricao']; ?> </textarea>
+	    </div>
+
+	
+	    <button type="button" class="btn btn-warning">Cancelar</button>
+	    <button type="submit" class="btn btn-primary">Editar</button>
+</form>

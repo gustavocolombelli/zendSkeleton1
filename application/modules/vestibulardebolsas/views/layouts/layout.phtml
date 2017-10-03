@@ -1,0 +1,462 @@
+<?php
+// cache
+header("Cache-Control: private, max-age=10800, pre-check=10800");
+header("Pragma: private");
+header("Expires: " . date(DATE_RFC822, strtotime("30 day")));
+?>
+<!DOCTYPE html>
+<!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="pt-br"> <!--<![endif]-->
+
+    <head>
+        <meta charset="utf-8" />
+
+        <title>Vestibular de Bolsas Uniamérica 2014 | Faculdade Uniamérica</title>
+        <!-- Responsive Metatag -->    
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Meta do Facebook -->
+        <meta property="og:locale" content="en_US">
+        <meta property="og:type" content="website">
+        <meta property="og:description" content="A Uniamérica concede Bolsas de Estudo integrais para cursos de Ciências Biológicas e Farmácia. #Somostodosúnicos #SomostodosUniamérica">
+        <meta property="og:title" content="Vestibular de Bolsas Uniamérica 2014">
+        <meta property="og:site_name" content="Vestibular de Bolsas Uniamérica 2014">
+        <meta property="og:url" content="http://uniamerica.br/vestibulardebolsas">
+        <meta property="og:image" content="http://uniamerica.br/static/vestibulardebolsas/img/facebook.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="fb:admins" content="100000467295246" />
+
+
+        <!-- Page Description -->
+        <meta name="description" content="A Uniamérica concede Bolsas de Estudo integrais para cursos de graduação, a estudantes sem diploma de nível superior, seguindo critérios socioeconômicos predefinidos e levando em consideração a classificação do candidato no Vestibular de Bolsas.">
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="http://www.uniamerica.br/site/favicon.ico">
+
+        <!-- autor da pagina -->
+        <link rel="author" href="https://plus.google.com/+uniamerica/posts"/>
+
+        <!-- Stylesheet
+        ===================================================================================================  -->
+
+        <!-- Bootstrap -->
+        <link href="/static/vestibulardebolsas/css/bootstrap.min.css" rel="stylesheet" media="screen">
+
+        <!-- Style -->
+        <link href="/static/vestibulardebolsas/css/yellow.css" rel="stylesheet" media="screen">
+
+        <!-- Media-Queties -->
+        <link href="/static/vestibulardebolsas/css/media-queries.css" rel="stylesheet" media="screen">
+
+        <!-- Font icons -->
+        <link href="/static/vestibulardebolsas/css/fontello.css" rel="stylesheet">
+
+
+        <style>
+            .white {
+                color: #ffffff;
+            }
+            .silver {
+                color: #f2f2f2;
+            }
+            .dark {
+                color: #2d2d2d;
+            }
+            .grey {
+                color: #cccccc;
+            }
+            .color {
+                color: #f4da18;
+            }
+            .white-bg {
+                background: #ffffff;
+            }
+            .silver-bg {
+                background: #f2f2f2;
+            }
+            .dark-bg {
+                background: #2d2d2d;
+            }
+            .grey-bg {
+                background: #cccccc;
+            }
+            .color-bg {
+                background: #f4da18;
+            }
+            .trans-dark {
+                background: rgba(0, 0, 0, 0.5);
+            }
+            .trans-white {
+                background: rgba(255, 255, 255, 0.5);
+            }
+            ::selection {
+                background: #f4da18;
+                color: #2d2d2d;
+            }
+            ::-moz-selection {
+                background: #f4da18;
+                color: #2d2d2d;
+            }
+            .ajax-loader-html {
+                background: #f4da18;
+            }
+            .pace .pace-progress {
+                background-color: #f2f2f2;
+            }
+            .standard-nav li > a.highlighted {
+                color: #f4da18;
+            }
+            .intro .mouse-icon.dark {
+                border-color: #2d2d2d;
+            }
+            .intro .mouse-icon.dark .wheel {
+                background-color: #2d2d2d;
+            }
+            .intro .mouse-icon.dark:hover .wheel {
+                background-color: #2d2d2d;
+            }
+            .intro .mouse-icon.white {
+                border-color: #ffffff;
+            }
+            .intro .mouse-icon.white .wheel {
+                background-color: #ffffff;
+            }
+            .intro .mouse-icon.white:hover .wheel {
+                background-color: #ffffff;
+            }
+            .promo-text h3 > span {
+                border-top-color: #f4da18;
+                border-bottom-color: #f4da18;
+            }
+            .features-details {
+                border-color: #f2f2f2;
+            }
+            .features-icon.current > h5 {
+                color: #f4da18;
+            }
+            .active-service {
+                background: #f4da18;
+            }
+            .testimonial-wrap > p > span {
+                border-color: #f4da18;
+            }
+            ul#portfolioFilter li {
+                background: #f2f2f2;
+            }
+            ul#portfolioFilter li:hover {
+                background: #2d2d2d;
+                color: #ffffff;
+            }
+            ul#portfolioFilter li.active-filter {
+                background: #f4da18;
+                color: #2d2d2d;
+            }
+            div#portfolio_thumbs ul li div.item_info {
+                background: #f2f2f2;
+                color: #2d2d2d;
+            }
+            div#portfolio_thumbs ul li:hover div.item_info {
+                background: #f4da18;
+                color: #2d2d2d;
+            }
+            div#portfolio_thumbs ul li div.item_info h3 > span {
+                border-color: #2d2d2d;
+                color: #2d2d2d;
+            }
+            div#portfolio_thumbs ul li div.item_info p > span {
+                color: #2d2d2d;
+            }
+            .team-stage > h6 > span {
+                border-color: #f4da18;
+                color: #2d2d2d;
+            }
+            .standard-nav-white-text li > a {
+                color: #ffffff;
+            }
+            .standard-nav-dark-text li > a {
+                color: #2d2d2d;
+            }
+            .project-type > span {
+                border-color: #f4da18;
+            }
+            .item:hover > a > .thumb-title {
+                background: #f4da18;
+            }
+            .thumb-title > h5 > span {
+                color: #2d2d2d;
+                border: solid 1px #2d2d2d;
+            }
+            .alert {
+                background: #f4da18;
+            }
+            .alert > p {
+                color: #ffffff !important;
+            }
+
+            /*mouse scroll indicator icon*/
+            .intro .mouse-icon {
+                background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+                border: 2px solid;
+                border-radius: 15px;
+                bottom: 50px;
+                height: 44px;
+                left: 0;
+                margin: 0 auto;
+                position: absolute;
+                right: 0;
+                width: 30px;
+                cursor: pointer;
+                -webkit-transition: all .3s linear;
+                -moz-transition: all .3s linear;
+                -ms-transition: all .3s linear;
+                -o-transition: all .3s linear;
+                transition: all .3s linear;
+            }
+
+            .intro .mouse-icon:hover{
+                opacity: 0.3 !important;
+                -webkit-transition: all .3s linear;
+                -moz-transition: all .3s linear;
+                -ms-transition: all .3s linear;
+                -o-transition: all .3s linear;
+                transition: all .3s linear;
+            }
+            .intro .mouse-icon .wheel {
+                -webkit-animation: 1.7s ease 0s normal none infinite magic-mouse-icon;
+                -moz-animation: 1.7s ease 0s normal none infinite magic-mouse-icon;
+                -o-animation: 1.7s ease 0s normal none infinite magic-mouse-icon;
+                animation: 1.7s ease 0s normal none infinite magic-mouse-icon;
+                border-radius: 50%;
+                height: 12px;
+                left: 0;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 6px;
+                right: 0;
+                width: 6px;
+            }
+            @-moz-keyframes magic-mouse-icon {
+                0% {
+                    margin-top: 6px;
+                    opacity: 0;
+                }
+                30% {
+                    opacity: 1;
+                }
+                100% {
+                    margin-top: 18px;
+                    opacity: 0;
+                }
+            }
+            @-webkit-keyframes magic-mouse-icon {
+                0% {
+                    margin-top: 6px;
+                    opacity: 0;
+                }
+                30% {
+                    opacity: 1;
+                }
+                100% {
+                    margin-top: 18px;
+                    opacity: 0;
+                }
+            }
+            @-o-keyframes magic-mouse-icon {
+                0% {
+                    margin-top: 6px;
+                    opacity: 0;
+                }
+                30% {
+                    opacity: 1;
+                }
+                100% {
+                    margin-top: 18px;
+                    opacity: 0;
+                }
+            }
+            @keyframes magic-mouse-icon {
+                0% {
+                    margin-top: 6px;
+                    opacity: 0;
+                }
+                30% {
+                    opacity: 1;
+                }
+                100% {
+                    margin-top: 18px;
+                    opacity: 0;
+                }
+            }
+
+
+            /* .navbar-nav > li > ul{
+                                   visibility: hidden;
+                                   position: absolute;
+                                   top: 90px;
+                                   -webkit-transition: all 0.5s ease;
+                                   -moz-transition: all 0.5s ease;
+                                   -o-transition: all 0.5s ease;
+                                   -moz-opacity: 0.00;
+                                   opacity: 0.00;
+                                   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha"(Opacity=0);
+                               }                        
+                               .navbar-nav > li:hover > ul{
+                                   -moz-opacity: 1;
+                                   opacity: 1;
+                                   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha"(Opacity=100);
+                                   visibility: visible;
+                                   text-align: left;
+                                   background: rgba(255, 255, 255, 0.90);
+                                   padding: 4px 7px
+                               }
+                               .navbar-nav > li > ul > li{
+                                   display: block; 
+                                   font-size: 1.5em; 
+                                   padding: 10px;
+                                   border-bottom: 1px solid #c0c0c0;                        }
+                               .navbar-nav > li > ul > li > a{color: #000;}*/
+        </style>
+        <!--[if IE 7]>
+        <link href="font/fontello-ie7.css" rel="stylesheet" ><![endif]-->
+
+        <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+           <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>        
+        <![endif]-->
+
+        <!-- Media queries -->
+        <!--[if lt IE 9]>
+        <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+        <![endif]-->
+
+
+
+        <!-- CSS files for plugins -->
+        
+        
+        <!-- ======================= JQuery libs =========================== -->
+        <script src="/static/vestibulardebolsas/jquery-1.9.1.min.js"></script>
+
+        <script src="/static/vestibulardebolsas/modernizr.custom.js"></script>
+        <script src="/static/vestibulardebolsas/modernizr.custom.26633.js"></script>
+
+        <!-- Bootstrap -->
+        <script src="/static/vestibulardebolsas/bootstrap.min.js"></script>
+
+        <script src="/static/vestibulardebolsas/jquery.gridrotator.js"></script>
+
+        <!-- easing -->
+        <script src="/static/vestibulardebolsas/easing.js"></script>
+
+        <!-- Responsive Video -->      
+        <script src="/static/vestibulardebolsas/jquery.fitvids.min.js"></script>
+        <script src="/static/vestibulardebolsas/jquery.placeholder.js"></script>
+
+        <!-- Img Gallery Touch -->
+        <script src="/static/vestibulardebolsas/toucheffects.js"></script>
+
+        <!-- Lightbox -->
+        <script src="/static/vestibulardebolsas/lightbox-2.6.min.js"></script>
+
+        <!--Scroll To-->         
+        <script src="/static/vestibulardebolsas/jquery.scrollTo.js"></script> 
+        <script src="/static/vestibulardebolsas/jquery.nav.js"></script> 
+
+        <!-- Twitter -->
+        <script src="/static/vestibulardebolsas/jquery.tweet.min.js"></script>
+
+        <!--Retina Support-->
+        <script src="/static/vestibulardebolsas/retina.js"></script>
+
+    <!--[if lt IE 8]><script src="js/respond.min.js"></script><![endif]-->
+
+        <!-- Custom script -->
+        <script src="/static/vestibulardebolsas/script.js"></script>
+
+        <!-- NiceScroll -->
+        <script src="/static/vestibulardebolsas/slider/jquery.nicescroll.min.js"></script> 
+
+        <!-- ======================= End JQuery libs ======================= -->
+
+        <!-- Facebook & Google + -->
+    <div id="fb-root"></div>
+    <script type="text/javascript">
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id))
+                return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&appId=637345663027229&version=v2.0";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+
+        window.___gcfg = {lang: 'pt-BR'};
+
+        (function() {
+            var po = document.createElement('script');
+            po.type = 'text/javascript';
+            po.async = true;
+            po.src = 'https://apis.google.com/js/platform.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(po, s);
+        })();
+        
+        if (jQuery().niceScroll) {
+                jQuery("html").niceScroll({
+                    background: "#ccc",
+                    scrollspeed: 80,
+                    mousescrollstep: 60,
+                    cursorborder: 0,
+                    cursorcolor: "rgba(0,0,0,.6)",
+                    horizrailenabled: false,
+                    zindex: 99999,
+                    autohidemode: false,
+                    cursorwidth: 10
+                });
+
+            }
+    </script>
+</head>
+
+<body>
+    <!-- Google Tag Manager -->
+    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NFF9VV"
+                      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script>(function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({'gtm.start':
+                        new Date().getTime(), event: 'gtm.js'});
+            var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                    '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-NFF9VV');</script>
+    <!-- End Google Tag Manager -->
+
+    <?php echo $this->layout()->content; ?>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row copy">
+                <div class="col-sm-6">
+                    <h6>© Uniamérica 2014. Todos os direitos reservados.</h6>
+                </div>
+                <div class="col-sm-6">
+                    <ul>
+                        <li><a href="https://twitter.com/uniamerica" target="blank_"><i class="icon-twitter"></i></a></li>
+                        <li><a href="https://www.facebook.com/FaculdadeUniamerica" target="blank_"><i class="icon-facebook"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </footer>   
+    <!-- end Footer --> 
+
+    <a href="#" class="scrollup"><i class="icon-up-open"></i></a>      
+</body>
+</html>

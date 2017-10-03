@@ -1,0 +1,16 @@
+isEmpty;O campo deve ser preenchido
+stringLengthTooShort;O valor do campo deve ter no minimo %min% caracteres
+stringLengthTooLong;O valor do campo deve ter no máximo %max% caracteres
+notSame;Os valores fornecidos são diferentes
+missingToken;Nenhuma senha foi fornecida
+emailAddressInvalid;Endereço de e-mail inválido
+hostnameInvalidHostname;Endereço inválido
+notDigits;Valor inválido
+hostnameUnknownTld;'%value%' é um domínio desconhecido
+hostnameLocalNameNotAllowed;'%value%' é um domínio não permitido
+emailAddressInvalidHostname;'%value%' não é um email inválido
+emailAddressInvalidFormat;'%value%' não é um email inválido
+dateInvalid;Data inválida
+dateInvalidDate;'%value%' Data inválida
+dateFalseFormat;'%value%' O formado da data é inválido '%format%'
+notFloat;'%value%' é um número Inválido

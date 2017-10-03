@@ -1,0 +1,49 @@
+<?php $this->layout()->titulo='Workshop de Biomedicina'; ?>
+<?php $this->layout()->description='Workshop de Biomedicina'; ?>
+
+        <article class="home_slider">
+        <div id="slideshow-wrap">
+            <input type="radio" id="button-1" name="controls" checked="checked"/>
+            <label for="button-1"></label>
+            <input type="radio" id="button-2" name="controls"/>
+            <label for="button-2"></label>
+            <input type="radio" id="button-3" name="controls"/>
+            <label for="button-3"></label>
+            <input type="radio" id="button-4" name="controls"/>
+            <label for="button-4"></label>
+
+            <label for="button-1" class="arrows" id="arrow-1"></label>
+            <label for="button-2" class="arrows" id="arrow-2"></label>
+            <label for="button-3" class="arrows" id="arrow-3"></label>
+            <label for="button-4" class="arrows" id="arrow-4"></label>
+            <div id="slideshow-inner">
+                <ul>
+                    <li id="slide1">
+                        <a href="<?php echo $this->url(array('controller' => 'workshopbio', 'action' => 'sobre',), null, true) ?>">
+                            <img src="/static/workshopbio/img/slider1.jpg" />
+                        </a>
+                    </li>
+                    <li id="slide2">
+                        <a href="<?php echo $this->url(array('controller' => 'workshopbio', 'action' => 'palestrantes',), null, true) ?>">
+                            <img src="/static/workshopbio/img/slider2.jpg" /></a>
+                    </li>
+                    <li id="slide3">
+                        <a href="<?php echo $this->url(array('controller' => 'workshopbio', 'action' => 'sobre',), null, true) ?>">
+                            <img src="/static/workshopbio/img/slider3.jpg" />
+                        </a>
+                    </li>
+                    <li id="slide4">
+                        <a href="<?php echo $this->url(array('controller' => 'workshopbio', 'action' => 'programacao',), null, true) ?>">
+                            <a href="<?php echo $this->url(array('controller' => 'workshopbio', 'action' => 'inscricoes',), null, true) ?>" title="Inscrições para workshop de Biomedicina Estética">
+                                <img src="/static/workshopbio/img/slider4.jpg" /></a>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="box_">
+            <p>23 de abril de 2014</p>
+            <a href="<?php echo $this->url(array('controller' => 'workshopbio', 'action' => 'inscricoes',), null, true) ?>" title="Inscrições para workshop de Biomedicina Estética">Inscreva-se</a>
+        </div>
+
+</article>

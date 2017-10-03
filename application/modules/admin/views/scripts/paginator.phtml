@@ -1,0 +1,86 @@
+<div id="paginacao" class="pagination pull-right">
+    <ul>
+        <?php
+            $query = null;
+            
+            if( count( $_GET ) > 0 )
+                $query = '?' . http_build_query( $_GET ); 
+        ?>
+        <!-- Link para a primeira página -->
+        <?php if (isset($this->previous)): ?>
+            <li>
+                <a href="<?php echo $this->url(array('pagina' => $this->first)) . $query; ?>">
+                    &laquo; Primeira
+                </a>
+            </li>
+        <?php else: ?>
+            <li class="disabled">
+                <a href="#">
+                    &laquo; Primeira
+                </a>
+            </li>
+        <?php endif; ?>
+
+        <!-- Link para a página anterior -->
+        <?php if (isset($this->previous)): ?>
+            <li>
+                <a href="<?php echo $this->url(array('pagina' => $this->previous)) . $query; ?>">
+                    Anterior
+                </a>
+            </li>
+        <?php else: ?>
+            <li class="disabled">
+                <a href="#">
+                    Anterior
+                </a>
+            </li>
+        <?php endif; ?>
+
+        <!-- Links numerados -->
+        <?php foreach ($this->pagesInRange as $page): ?>
+            <?php if ($page != $this->current): ?>
+                <li>
+                    <a href="<?php echo $this->url(array('pagina' => $page)) . $query; ?>">
+                        <?php echo $page; ?>
+                    </a>
+                </li>
+             <?php else: ?>
+                <li class="active">
+                    <a href="<?php echo $this->url(array('pagina' => $page)) . $query; ?>">
+                        <?php echo $page; ?>
+                    </a>
+                </li>
+             <?php endif; ?>
+        <?php endforeach; ?>
+
+        <!-- Link para a Próxima página -->
+        <?php if (isset($this->next)): ?>
+            <li>
+                <a href="<?php echo $this->url(array('pagina' => $this->next)) . $query; ?>">
+                    Próxima
+                </a>
+            </li>
+        <?php else: ?>
+            <li class="disabled">
+                <a href="#">
+                    Próxima
+                </a>
+            </li>
+        <?php endif; ?>
+
+        <!-- Última página -->
+        <?php if (isset($this->next)): ?>
+            <li>
+                <a href="<?php echo $this->url(array('pagina' => $this->last)) . $query; ?>">
+                    Última &raquo;
+                </a>
+            </li>
+        <?php else: ?>
+            <li class="disabled">
+                <a href="#">
+                    Última &raquo;
+                </a>
+            </li>
+        <?php endif; ?>
+    </ul>
+</div>

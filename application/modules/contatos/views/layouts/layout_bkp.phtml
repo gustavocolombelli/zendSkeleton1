@@ -1,0 +1,233 @@
+<?php
+// cache
+header("Cache-Control: private, max-age=10800, pre-check=10800");
+header("Pragma: private");
+header("Expires: " . date(DATE_RFC822, strtotime("30 day")));
+?>
+<!DOCTYPE html>
+<!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+    <head>
+        <meta charset="utf-8" />
+
+        <title>Prepare-se para o ENEM | Intensivão Uniamérica</title>
+        <!-- Responsive Metatag -->    
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Meta do Facebook -->
+        <meta property="og:locale" content="en_US">
+        <meta property="og:type" content="website">
+        <meta property="og:description" content="O Intensivão da Uniamérica é dedicado a quem está se preparando para o ENEM e para o Vestibular de Bolsas Uniamérica.">
+        <meta property="og:title" content="Intensivão Uniamérica 2014">
+        <meta property="og:site_name" content="Intensivão Uniamérica 2014">
+        <meta property="og:url" content="http://uniamerica.br/intensivao">
+        <meta property="og:image" content="http://uniamerica.br/static/intensivao/img/facebook.jpg">
+        <meta property="og:image:type" content="image/jpeg">
+        <meta property="fb:admins" content="100000467295246" />
+
+
+        <!-- Page Description -->
+        <meta name="description" content="O Intensivão da Uniamérica é dedicado a quem está se preparando para o ENEM e para o Vestibular de Bolsas Uniamérica.">
+
+        <!-- autor da pagina -->
+        <link rel="author" href="https://plus.google.com/+uniamerica/posts"/>
+
+        <!-- Stylesheet
+        ===================================================================================================  -->
+
+        <!-- Bootstrap -->
+        <link href="/static/intensivao/css/bootstrap.min.css" rel="stylesheet" media="screen">
+
+        <!-- Style -->
+        <link href="/static/intensivao/css/yellow.css" rel="stylesheet" media="screen">
+
+        <!-- Media-Queties -->
+        <link href="/static/intensivao/css/media-queries.css" rel="stylesheet" media="screen">
+
+        <!-- Font icons -->
+        <link href="/static/intensivao/css/fontello.css" rel="stylesheet">
+        <!--[if IE 7]>
+        <link href="font/fontello-ie7.css" rel="stylesheet" ><![endif]-->
+
+        <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+           <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>        
+        <![endif]-->
+
+        <!-- Media queries -->
+        <!--[if lt IE 9]>
+        <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+        <![endif]-->
+
+        <!-- ======================= JQuery libs =========================== -->
+
+
+        <script src="/static/intensivao/jquery-1.9.1.min.js"></script>
+
+        <script src="/static/intensivao/modernizr.custom.js"></script>
+        <!--<script src="/static/intensivao/modernizr.custom.26633.js"></script>-->
+
+        <!-- Bootstrap -->
+        <script src="/static/intensivao/bootstrap.min.js"></script>
+
+        <script src="/static/intensivao/jquery.gridrotator.js"></script>
+
+        <!-- easing -->
+        <script src="/static/intensivao/easing.js"></script>
+
+        <!-- Responsive Video -->      
+        <script src="/static/intensivao/jquery.fitvids.min.js"></script>
+        <script src="/static/intensivao/jquery.placeholder.js"></script>
+
+        <!-- Img Gallery Touch -->
+        <script src="/static/intensivao/toucheffects.js"></script>
+
+        <!-- Lightbox -->
+        <script src="/static/intensivao/lightbox-2.6.min.js"></script>
+
+        <!--Scroll To-->         
+        <script src="/static/intensivao/jquery.scrollTo.js"></script> 
+        <script src="/static/intensivao/jquery.nav.js"></script> 
+
+        <!-- Twitter -->
+        <script src="/static/intensivao/jquery.tweet.min.js"></script>
+
+        <!--Retina Support-->
+        <script src="/static/intensivao/retina.js"></script>
+
+    <!--[if lt IE 8]><script src="js/respond.min.js"></script><![endif]-->
+
+        <!-- Custom script -->
+        <script src="/static/intensivao/script.js"></script>
+
+        <!-- ======================= End JQuery libs ======================= -->
+    <div class="fit-vids-style">
+        <style>               
+            .fluid-width-video-wrapper {                 
+                width: 100%;                              
+                position: relative;                       
+                padding: 0;                            
+            }                                                                                   
+            .fluid-width-video-wrapper iframe,        
+            .fluid-width-video-wrapper object,        
+            .fluid-width-video-wrapper embed {           
+                position: absolute;                       
+                top: 0;                                   
+                left: 0;                                  
+                width: 100%;                              
+                height: 100%;                          
+            }                                       
+        </style>
+    </div>
+    <style id="clearly_highlighting_css" type="text/css">
+        /* selection */ 
+        html.clearly_highlighting_enabled ::-moz-selection { 
+            background: rgba(246, 238, 150, 0.99); } 
+        html.clearly_highlighting_enabled ::selection { 
+            background: rgba(246, 238, 150, 0.99); } 
+        /* cursor */ 
+        html.clearly_highlighting_enabled {    
+            /* cursor and hot-spot position -- requires a default cursor, after the URL one */    
+            cursor: url("chrome-extension://afgbccjghcnbcdjgogpckamibfkceahd/clearly/images/highlight--cursor.png") 14 16, text; } 
+        /* highlight tag */ em.clearly_highlight_element {    
+            font-style: inherit !important; font-weight: inherit !important;    
+            //background-image: url("chrome-extension://afgbccjghcnbcdjgogpckamibfkceahd/clearly/images/highlight--yellow.png");    
+            background-repeat: repeat-x; background-position: top left; background-size: 100% 100%; } 
+        /* the delete-buttons are positioned relative to this */ 
+        em.clearly_highlight_element.clearly_highlight_first { position: relative; } 
+        /* delete buttons */ em.clearly_highlight_element a.clearly_highlight_delete_element {    
+            display: none; 
+            cursor: pointer;    
+            padding: 0; margin: 0; line-height: 0;    
+            position: absolute; width: 34px; height: 34px; left: -17px; top: -17px;    
+            //background-image: url("chrome-extension://afgbccjghcnbcdjgogpckamibfkceahd/clearly/images/highlight--delete-sprite.png"); 
+            background-repeat: no-repeat; background-position: 0px 0px; } 
+        em.clearly_highlight_element a.clearly_highlight_delete_element:hover { background-position: -34px 0px; } 
+        /* retina */ 
+        @media (min--moz-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2) {    
+            em.clearly_highlight_element { 
+                //background-image: url("chrome-extension://afgbccjghcnbcdjgogpckamibfkceahd/clearly/images/highlight--yellow@2x.png"); }    
+            em.clearly_highlight_element a.clearly_highlight_delete_element { 
+                //background-image: url("chrome-extension://afgbccjghcnbcdjgogpckamibfkceahd/clearly/images/highlight--delete-sprite@2x.png"); 
+                                                                              
+                background-size: 68px 34px; } } 
+            </style>
+
+            <style type="text/css">
+
+        [touch-action="none"]{ -ms-touch-action: none; touch-action: none; }
+        [touch-action="pan-x"]{ -ms-touch-action: pan-x; touch-action: pan-x; }
+        [touch-action="pan-y"]{ -ms-touch-action: pan-y; touch-action: pan-y; }
+        [touch-action="scroll"],[touch-action="pan-x pan-y"],
+        [touch-action="pan-y pan-x"]{ -ms-touch-action: pan-x pan-y; touch-action: pan-x pan-y; }
+
+    </style>
+    <div id="fb-root"></div>
+    <script type="text/javascript">
+        window.___gcfg = {lang: 'pt-BR'};
+
+        (function() {
+            var po = document.createElement('script');
+            po.type = 'text/javascript';
+            po.async = true;
+            po.src = 'https://apis.google.com/js/platform.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(po, s);
+        })();
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id))
+                return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "//connect.facebook.net/pt_BR/all.js#xfbml=1";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+</head>
+
+<body>
+    <!-- Google Tag Manager -->
+    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NFF9VV"
+                      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script>(function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({'gtm.start':
+                        new Date().getTime(), event: 'gtm.js'});
+            var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                    '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-NFF9VV');</script>
+    <!-- End Google Tag Manager -->
+
+    <?php echo $this->layout()->content; ?>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row copy">
+                <div class="col-sm-6">
+                    <h6>© Uniamérica 2014. Todos os direitos reservados.</h6>
+                </div>
+                <div class="col-sm-6">
+                    <ul>
+                        <li><a href="https://twitter.com/uniamerica" target="blank_"><i class="icon-twitter"></i></a></li>
+                        <li><a href="https://www.facebook.com/FaculdadeUniamerica" target="blank_"><i class="icon-facebook"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </footer>   
+    <!-- end Footer --> 
+
+
+
+
+    <a href="#" class="scrollup"><i class="icon-up-open"></i></a>      
+
+</body>
+</html>
